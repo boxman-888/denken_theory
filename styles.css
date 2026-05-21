@@ -163,6 +163,12 @@ main {
   overflow: hidden;
 }
 
+.formula-card.mastered,
+.formula-row.mastered {
+  border-color: #b7e0d7;
+  background: rgba(244, 252, 249, 0.96);
+}
+
 .card-top {
   display: flex;
   align-items: start;
@@ -276,6 +282,22 @@ main {
   font: 700 14px/1.6 system-ui, sans-serif;
 }
 
+.master-button {
+  min-height: 42px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font: 700 14px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.master-button.mastered {
+  border-color: var(--line);
+  background: #fff;
+  color: var(--muted);
+}
+
 .quiz-panel {
   padding: 18px;
 }
@@ -298,13 +320,22 @@ main {
   background: #fff;
 }
 
-.quiz-actions {
+.quiz-actions,
+.memorize-actions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
-.quiz-actions button {
+.quiz-actions {
+  grid-template-columns: 1fr 1fr;
+}
+
+.quiz-actions.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.quiz-actions button,
+.memorize-actions button {
   min-height: 46px;
   border: 0;
   border-radius: 8px;
@@ -313,8 +344,35 @@ main {
   cursor: pointer;
 }
 
-.quiz-actions button + button {
+.quiz-actions button:first-child,
+.quiz-actions button + button,
+.memorize-actions button {
   background: #344054;
+}
+
+.quiz-actions button:nth-child(2),
+.memorize-actions button:nth-child(2) {
+  background: var(--accent);
+}
+
+.memorize-actions {
+  grid-template-columns: 1fr 1fr;
+}
+
+.memorize-actions .master-button {
+  grid-column: 1 / -1;
+  background: var(--gold);
+}
+
+.memorize-card .masked {
+  color: var(--accent);
+  font: 700 52px/1 system-ui, sans-serif;
+}
+
+.complete-panel h2 {
+  margin: 0 0 12px;
+  font-size: 21px;
+  line-height: 1.45;
 }
 
 .formula-list {
@@ -369,5 +427,16 @@ main {
 
   .formula-card.featured {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 430px) {
+  .quiz-actions.three {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-actions button,
+  .memorize-actions button {
+    min-height: 44px;
   }
 }

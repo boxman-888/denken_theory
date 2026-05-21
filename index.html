@@ -12,9 +12,9 @@
         <p class="eyebrow">電験三種・理論</p>
         <h1>公式暗記カード</h1>
       </div>
-      <div class="streak" aria-label="今日の暗記枚数">
-        <span id="learnedCount">0</span>
-        <small>枚</small>
+      <div class="streak" aria-label="完全に覚えた枚数">
+        <span id="masteredCount">0</span>
+        <small>完了</small>
       </div>
     </header>
 
@@ -30,6 +30,7 @@
       <section class="mode-switch" aria-label="学習モード">
         <button class="mode-button active" type="button" data-mode="cards">カード</button>
         <button class="mode-button" type="button" data-mode="quiz">確認</button>
+        <button class="mode-button" type="button" data-mode="memorize">暗記</button>
         <button class="mode-button" type="button" data-mode="list">一覧</button>
       </section>
 
@@ -40,12 +41,15 @@
           <p class="quiz-kicker" id="quizCategory">公式チェック</p>
           <h2 id="quizTitle"></h2>
           <div class="quiz-answer hidden" id="quizAnswer"></div>
-          <div class="quiz-actions">
+          <div class="quiz-actions three">
+            <button id="prevQuestion" type="button">ひとつ前</button>
             <button id="showAnswer" type="button">答えを見る</button>
             <button id="nextQuestion" type="button">次へ</button>
           </div>
         </div>
       </section>
+
+      <section id="memorizeView" class="memorize hidden" aria-live="polite"></section>
 
       <section id="listView" class="formula-list hidden" aria-live="polite"></section>
     </main>
