@@ -4,308 +4,308 @@ const formulas = [
     title: "オームの法則",
     formula: "V = IR",
     role: "電圧・電流・抵抗の基本関係。回路計算の最初に使う土台。",
-    mnemonic: "Vは「行ける？」、Iが「Rあるよ」。電圧Vは、電流Iと抵抗Rのかけ算。"
+    mnemonic: "V（ブイ）はアイ（I）アール（R）。Vは愛ある。"
   },
   {
     category: "直流",
     title: "抵抗",
     formula: "R = ρ [[l/S]]",
     role: "導体の長さ・断面積・材質から抵抗を求める。長いほど大きく、太いほど小さい。",
-    mnemonic: "細いストローは飲みにくい。長い道lは抵抗アップ、広い断面Sはスイスイ。"
+    mnemonic: "抵抗（R）するロー（ρ）は、上に長（l）く下はスリム（S）。"
   },
   {
     category: "直流",
     title: "電力",
     formula: "P = VI = I^2R = [[V^2/R]]",
     role: "電気がどれだけの速さで仕事や熱になるかを表す。",
-    mnemonic: "パワーPはブイアイ。電流メインならI2R、電圧メインならV2割るR。"
+    mnemonic: "パワー（P）のブイアイ（VI）、愛に（I^2）アール、ブイに（V^2）割るアール。"
   },
   {
     category: "直流",
     title: "電力量",
     formula: "W = Pt",
     role: "電力を時間分だけ積み上げた量。kWhの計算で使う。",
-    mnemonic: "ワットPを時間tだけ使ったら、電力量Wがたまる。スマホ充電のイメージ。"
+    mnemonic: "ワット（W）をパッと（Pt）使う電力量。"
   },
   {
     category: "交流",
     title: "周期と周波数",
     formula: "f = [[1/T]]",
     role: "1秒間に何回くり返すかを表す。周期とは逆数の関係。",
-    mnemonic: "ゆっくり1周Tが長いほど、回数fは少ない。のんびり回転は低周波。"
+    mnemonic: "振（f）り返れば、上（1）に下（T）。"
   },
   {
     category: "交流",
     title: "角周波数",
     formula: "ω = 2πf",
     role: "交流の速さを角度で表す。コイルやコンデンサの計算で使う。",
-    mnemonic: "1周は2π。f回まわるから、オメガは2πf。観覧車を思い出す。"
+    mnemonic: "オメガ（ω）は、ニパイ（2π）エフ（f）。"
   },
   {
     category: "交流",
-    title: "正弦波交流の実効値",
+    title: "正弦波の実効値",
     formula: "実効値 = [[最大値/√2]]",
     role: "交流を直流と同じ効き目で表す値。電圧・電流の標準表示。",
-    mnemonic: "最大値はちょっと盛りすぎ。実際に使う値はルート2で割って落ち着く。"
+    mnemonic: "じっこう（実効）は、ルートに（√2）割られる最大（最大値）。"
   },
   {
     category: "交流",
     title: "誘導性リアクタンス",
     formula: "X_L = ωL",
     role: "コイルが交流を妨げる大きさ。周波数が高いほど大きくなる。",
-    mnemonic: "コイルLは変化が苦手。速いωほどイヤがって、XLが大きくなる。"
+    mnemonic: "コイルのXLは、オメガ（ω）エル（L）。"
   },
   {
     category: "交流",
     title: "容量性リアクタンス",
     formula: "X_C = [[1/ωC]]",
     role: "コンデンサが交流を妨げる大きさ。周波数が高いほど小さくなる。",
-    mnemonic: "コンデンサCは速い変化が得意。ωCが下にあるから、速いほどXCは小さい。"
+    mnemonic: "コンデンサXCは、上に1、下がオメガ（ω）シー（C）。"
   },
   {
     category: "交流",
     title: "交流電力",
     formula: "S = VI | P = VI cosθ | Q = VI sinθ",
     role: "皮相電力S、有効電力P、無効電力Qを区別する。力率問題の中心。",
-    mnemonic: "仕事するPはコスプレのコス。遊んで戻るQはサインでゆらゆら。Sは見かけ。"
+    mnemonic: "見かけ（S）はブイアイ。働くピー（P）コス、遊ぶキュー（Q）サイン。"
   },
   {
     category: "交流",
     title: "交流電力の関係",
     formula: "S = √[[P^2 + Q^2]]",
     role: "有効電力Pと無効電力Qから皮相電力Sを求める。",
-    mnemonic: "PとQは直角三角形。最後は三平方でSに集合。"
+    mnemonic: "見かけ（S）のルートは、ピカ（P^2）足すキュカ（Q^2）。"
   },
   {
     category: "交流",
     title: "力率",
     formula: "cosθ = [[P/S]]",
     role: "見かけの電力Sのうち、実際に仕事をした割合を表す。",
-    mnemonic: "コスパを見るなら、働いたPを見かけSで割る。力率は電気のコスパ。"
+    mnemonic: "コス（cosθ）は、上がピー（P）で下がエス（S）。"
   },
   {
-    category: "過渡現象",
-    title: "RL直列回路の時定数",
-    formula: "T = [[L/R]]",
+    category: "過渡",
+    title: "RL回路の時定数",
+    formula: "τ = [[L/R]]",
     role: "コイル電流の立ち上がり・減衰の速さを決める。",
-    mnemonic: "コイルLはのんびり屋、抵抗Rはブレーキ。Lが上、Rが下で時間T。"
+    mnemonic: "RLの時間は、上がエル（L）で下がアール（R）。"
   },
   {
-    category: "過渡現象",
-    title: "RC直列回路の時定数",
-    formula: "T = RC",
+    category: "過渡",
+    title: "RC回路の時定数",
+    formula: "τ = RC",
     role: "コンデンサの充放電の速さを決める。",
-    mnemonic: "充電時間はRとCのペア。スマホ充電ケーブルとバッテリーでRC。"
+    mnemonic: "RCの時間は、そのままアールシー（RC）。"
   },
   {
-    category: "三相交流",
+    category: "三相",
     title: "Y-Y結線",
-    formula: "線電流 = 相電流 | 線間電圧 = √3 × 相電圧",
+    formula: "I_l = I_p | V_l = √3V_p",
     role: "Y結線の線間電圧・線電流の関係を整理する。",
-    mnemonic: "Yは電流そのまま。電圧だけ3本の道で広がってルート3倍。"
+    mnemonic: "ワイ（Y）は電流同じ、電圧にルートさん（√3）。"
   },
   {
-    category: "三相交流",
+    category: "三相",
     title: "Δ-Δ結線",
-    formula: "線電流 = √3 × 相電流 | 線間電圧 = 相電圧",
+    formula: "I_l = √3I_p | V_l = V_p",
     role: "Δ結線の線間電圧・線電流の関係を整理する。",
-    mnemonic: "デルタは電圧そのまま。電流だけ三角を回ってルート3倍。"
+    mnemonic: "デルタ（Δ）は電圧同じ、電流にルートさん（√3）。"
   },
   {
-    category: "三相交流",
-    title: "平衡三相交流回路の負荷",
-    formula: "Δ → Y はインピーダンス [[1/3]]倍 | Y → Δ はインピーダンス 3倍",
+    category: "三相",
+    title: "負荷の互換",
+    formula: "Δ → Y = [[1/3]]倍 | Y → Δ = 3倍",
     role: "三相負荷をY・Δ変換するときのインピーダンス換算。",
-    mnemonic: "デルタからワイへ行くと荷物は3分の1。ワイからデルタへ戻ると3倍。"
+    mnemonic: "デル（Δ）ワイ（Y）は3分の1、ワイ（Y）デル（Δ）は3倍。"
   },
   {
-    category: "三相交流",
+    category: "三相",
     title: "三相電力",
     formula: "P = √3VI cosθ",
     role: "三相交流の有効電力を線間電圧V・線電流Iから求める。",
-    mnemonic: "三相はまずルート3。そこにV・I・コスで仕事量P。"
+    mnemonic: "三相パワーは、ルートさん（√3）ブイ（V）アイ（I）コス（cosθ）。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "クーロンの法則",
-    formula: "F = [[Q_1Q_2/4πε_0r^2]] = 9×10^9 × [[Q_1Q_2/r^2]]",
+    formula: "F = 9×10^9 × [[Q_1Q_2/r^2]]",
     role: "2つの電荷にはたらく力。距離の2乗に反比例する。",
-    mnemonic: "電荷Qどうしは近いと強烈。距離rは2乗で効くので、離れると一気に弱い。"
+    mnemonic: "クーロン力（F）は、旧（9）電（10^9）の上でキュッキュ（Q_1Q_2）とアール二乗（r^2）で割る。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "誘電率",
     formula: "ε = ε_0ε_r",
     role: "電気の通しやすさを表す。真空の誘電率と比誘電率の積。",
-    mnemonic: "イプシロンは基本ε0に、材料の性格εrをかける。"
+    mnemonic: "イプシロン（ε）は、ゼロ（ε_0）にアール（ε_r）をかけるだけ。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "電界の強さ",
-    formula: "E = [[Q/4πε_0r^2]] = 9×10^9 × [[Q/r^2]]",
+    formula: "E = 9×10^9 × [[Q/r^2]]",
     role: "点電荷の周囲で、単位電荷が受ける力の強さを表す。",
-    mnemonic: "電界Eは1個のQから出る強さ。距離r2で薄まるライトの明るさ。"
+    mnemonic: "電界（E）は、旧（9）電（10^9）の上でクイ（Q）っとアール二乗（r^2）で割る。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "電気力線本数",
     formula: "N = [[Q/ε]]",
     role: "電荷Qから出る電気力線の本数を表す。",
-    mnemonic: "力線Nは電荷Qの本数を、誘電率εでならす。Qをεで割るだけ。"
+    mnemonic: "力線（N）は、上がキュー（Q）で下がイプシロン（ε）。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "電束密度",
     formula: "D = [[Q/4πr^2]]",
     role: "電荷から出る電束を球の表面積で割った密度。",
-    mnemonic: "Dは電束の密度。Qを丸い風船の表面4πr2に広げる。"
+    mnemonic: "密度（D）は、上がキュー（Q）、下は丸ごとヨンパイアール二乗（4πr^2）。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "電位",
-    formula: "V = [[Q/4πε_0r]]",
+    formula: "V = 9×10^9 × [[Q/r]]",
     role: "点電荷から距離rの位置にある電位。電界と違って距離は1乗。",
-    mnemonic: "電位Vは高さ。距離rが下に1個だけ。電界Eのr2と区別。"
+    mnemonic: "電位（V）は、旧（9）電（10^9）の上でキュー（Q）をアール（r）だけで割る。"
   },
   {
-    category: "静電気",
+    category: "静電",
     title: "静電容量",
-    formula: "C = [[εS/d]]",
+    formula: "C = ε[[S/d]]",
     role: "平行板コンデンサの容量。面積と誘電率で増え、距離で減る。",
-    mnemonic: "大きい皿Sはたくさん入る。すき間dが広いと入りにくい。"
+    mnemonic: "容量（C）は、イプシロン（ε）の上（S）下（d）。"
   },
   {
-    category: "静電気",
-    title: "コンデンサに蓄えられる電荷",
+    category: "静電",
+    title: "蓄えられる電荷",
     formula: "Q = CV",
     role: "コンデンサの容量Cと電圧Vから蓄えた電荷Qを求める。",
-    mnemonic: "コップCに水圧Vをかけると、たまる電荷Q。QはCV。"
+    mnemonic: "電荷（Q）は、シーブイ（CV）。"
   },
   {
-    category: "静電気",
-    title: "コンデンサのエネルギー",
+    category: "静電",
+    title: "エネルギー",
     formula: "W = [[1/2]]CV^2",
     role: "コンデンサに蓄えられるエネルギー。",
-    mnemonic: "コンデンサの貯金は半分ルール。2分の1、C、V2。"
+    mnemonic: "コンデンサのWは、半分（1/2）のシーブイ二乗（CV^2）。"
   },
   {
     category: "磁気",
     title: "透磁率",
     formula: "μ = μ_0μ_r",
     role: "磁束の通しやすさ。真空の透磁率と比透磁率の積。",
-    mnemonic: "ミューは基本μ0に、材料のクセμrをかける。"
+    mnemonic: "ミュー（μ）は、ゼロ（μ_0）にアール（μ_r）をかけるだけ。"
   },
   {
     category: "磁気",
     title: "磁界の強さ",
     formula: "H = [[m/4πμ_0r^2]]",
     role: "磁極mから距離rの位置にできる磁界の強さ。",
-    mnemonic: "磁界Hも距離r2で薄まる。mを4πμ0r2で割る。"
+    mnemonic: "磁界（H）は、上がエム（m）、下はヨンパイミューゼロアール二乗（4πμ_0r^2）。"
   },
   {
     category: "磁気",
     title: "磁力線の本数",
     formula: "N = [[Φ/μ_0]]",
     role: "磁束Φを真空の透磁率で割って磁力線の本数を表す。",
-    mnemonic: "磁力線NはファイΦをミューゼロで割る。ファイを数える感じ。"
+    mnemonic: "磁力線（N）は、上がファイ（Φ）で下がミューゼロ（μ_0）。"
   },
   {
     category: "磁気",
     title: "磁束密度",
     formula: "B = μH",
     role: "磁界Hによって生じる磁束の密度。",
-    mnemonic: "Bは磁束の濃さ。Hに材料の通しやすさμをかける。"
+    mnemonic: "B（ビー）は、ミューエイチ（μH）。"
   },
   {
     category: "磁気",
     title: "磁束",
     formula: "Φ = BS",
     role: "面Sを通る磁束の総量。磁束密度に面積をかける。",
-    mnemonic: "ファイΦはBを面積Sに広げた量。密度×面積。"
+    mnemonic: "ファイ（Φ）は、ビーエス（BS）。"
   },
   {
     category: "磁気",
     title: "無限長導体の磁界",
     formula: "H = [[I/2πr]]",
     role: "長い直線導体の周囲にできる磁界の強さ。",
-    mnemonic: "一本線のまわりをぐるっと2πr。電流Iを円周で割る。"
+    mnemonic: "無限長（H）は、上がアイ（I）、下がニパイアール（2πr）。"
   },
   {
     category: "磁気",
-    title: "N回巻円形コイルの中心磁界",
+    title: "円形コイルの中心磁界",
     formula: "H = [[NI/2a]]",
     role: "N回巻き円形コイルの中心にできる磁界の強さ。",
-    mnemonic: "丸いコイルはN回ぶん強い。半径側は2aで割る。"
+    mnemonic: "円形（H）は、上がエヌアイ（NI）、下がニア（2a）。"
   },
   {
     category: "磁気",
     title: "ソレノイド内部磁界",
     formula: "H = [[NI/l]]",
     role: "ソレノイド内部の磁界。巻数と電流で強く、長さで弱くなる。",
-    mnemonic: "ソレノイドは巻けばN、流せばI、長いlほど薄まる。"
+    mnemonic: "ソレノイド（H）は、上がエヌアイ（NI）、下がエル（l）。"
   },
   {
     category: "磁気",
     title: "コイルの起電力",
     formula: "e = -N[[ΔΦ/Δt]]",
     role: "磁束変化によって生じる誘導起電力。マイナスは変化を妨げる向き。",
-    mnemonic: "ファイΦが変わるとコイルが反抗。N回巻きで強く、マイナスで逆向き。"
+    mnemonic: "起電力（e）は、マイナスエヌ（-N）の、デルタファ割るデルタティ（ΔΦ/Δt）。"
   },
   {
     category: "磁気",
-    title: "導体を動かしたときの起電力",
+    title: "動体による起電力",
     formula: "e = Blv sinθ",
     role: "磁界中で導体を動かしたときに生じる起電力。",
-    mnemonic: "棒をビューっと動かす。B、長さl、速さv、角度はサイン。"
+    mnemonic: "動かす（e）のは、ビルブ（Blv）のサイン（sinθ）。"
   },
   {
     category: "磁気",
     title: "電磁力",
     formula: "F = BIl sinθ",
     role: "磁界中の導体に電流が流れたときの力。",
-    mnemonic: "電流が流れる棒に力。B、I、長さl、角度はサイン。"
+    mnemonic: "力（F）は、ビル（BIl）のサイン（sinθ）。"
   },
   {
     category: "磁気",
     title: "磁気抵抗",
     formula: "R_m = [[l/μS]]",
     role: "磁気回路で磁束の通りにくさを表す。",
-    mnemonic: "磁気の通り道も、長いlと通しにくい材料で抵抗アップ。広いSは通しやすい。"
+    mnemonic: "磁気抵抗（Rm）は、上がエル（l）、下がミューエス（μS）。"
   },
   {
     category: "磁気",
-    title: "磁気回路のオームの法則",
+    title: "磁気回路のオーム",
     formula: "R_m = [[NI/Φ]]",
     role: "磁気回路で起磁力NI、磁束Φ、磁気抵抗Rmの関係を表す。",
-    mnemonic: "電気のオームと同じノリ。巻数N×電流Iを、流れた磁束Φで割る。"
+    mnemonic: "Rmは、上がエヌアイ（NI）、下がファイ（Φ）。"
   },
   {
     category: "磁気",
     title: "自己誘導起電力",
     formula: "e = -L[[ΔI/Δt]]",
     role: "電流変化によってコイル自身に生じる起電力。",
-    mnemonic: "電流Iを急に変えると、コイルLがイヤだと言う。マイナスで反抗。"
+    mnemonic: "自己（e）は、マイナスエル（-L）の、デルタアイ割るデルタティ（ΔI/Δt）。"
   },
   {
     category: "磁気",
-    title: "環状コイルの自己インダクタンス",
+    title: "環状コイルのL",
     formula: "L = [[μSN^2/l]]",
     role: "環状コイルの自己インダクタンスを求める。",
-    mnemonic: "巻数Nは2乗で効く。たくさん巻くほどLが一気に増える。"
+    mnemonic: "インダクタンス（L）は、上がミューエスエヌ二乗（μSN^2）、下がエル（l）。"
   },
   {
     category: "磁気",
     title: "磁気エネルギー",
     formula: "W = [[1/2]]LI^2",
     role: "コイルに蓄えられる磁気エネルギー。",
-    mnemonic: "コイルの貯金も半分ルール。2分の1、L、I2。"
+    mnemonic: "コイルのWは、半分（1/2）のエルアイ二乗（LI^2）。"
   },
   {
-    category: "磁気",
+    category: "電子",
     title: "電子の運動エネルギー",
     formula: "eV = [[1/2]]mv^2",
     role: "電圧で加速された電子のエネルギーと運動エネルギーの関係。",
-    mnemonic: "電気で押したeVが、走るエネルギー2分の1mv2になる。"
+    mnemonic: "イーヴィー（eV）は、半分のエムブイ二乗（1/2mv^2）。"
   }
 ];
 
