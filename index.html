@@ -3,57 +3,58 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>電験三種 理論 公式暗記</title>
+    <title>電験三種 理論 完全暗記体系</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="app-header">
       <div>
         <p class="eyebrow">電験三種・理論</p>
-        <h1>公式暗記カード</h1>
+        <h1>完全暗記体系</h1>
       </div>
-      <div class="streak" aria-label="完全に覚えた枚数">
+      <div class="score-ring" aria-label="完全暗記済み数">
         <span id="masteredCount">0</span>
-        <small>完了</small>
+        <small id="totalCount">/ 47</small>
       </div>
     </header>
 
     <main>
-      <section class="controls" aria-label="公式検索と絞り込み">
+      <section class="hero">
+        <div>
+          <p class="hero-label">問題文のキーワード → 使う公式</p>
+          <h2>見た瞬間に式を選べる状態を作る</h2>
+        </div>
+        <button id="resumeButton" type="button">続きから</button>
+      </section>
+
+      <section class="filters" aria-label="検索と絞り込み">
         <label class="search">
           <span>検索</span>
-          <input id="searchInput" type="search" placeholder="例: 電力、クーロン、リアクタンス">
+          <input id="searchInput" type="search" placeholder="例: 端子電圧、√3、十分時間後、ブリッジ">
         </label>
+        <div id="importanceTabs" class="tabs" role="tablist" aria-label="重要度"></div>
         <div id="categoryTabs" class="tabs" role="tablist" aria-label="分野"></div>
       </section>
 
-      <section class="mode-switch" aria-label="学習モード">
-        <button class="mode-button active" type="button" data-mode="cards">カード</button>
-        <button class="mode-button" type="button" data-mode="quiz">確認</button>
+      <section class="mode-switch" aria-label="表示モード">
+        <button class="mode-button active" type="button" data-mode="overview">方針</button>
+        <button class="mode-button" type="button" data-mode="cards">公式</button>
+        <button class="mode-button" type="button" data-mode="trainer">キーワード</button>
         <button class="mode-button" type="button" data-mode="memorize">暗記</button>
-        <button class="mode-button" type="button" data-mode="list">一覧</button>
+        <button class="mode-button" type="button" data-mode="memorizeS">暗記S</button>
+        <button class="mode-button" type="button" data-mode="memorizeA">暗記A</button>
+        <button class="mode-button" type="button" data-mode="memorizeB">暗記B</button>
+        <button class="mode-button" type="button" data-mode="map">全体マップ</button>
       </section>
 
-      <section id="cardsView" class="cards" aria-live="polite"></section>
-
-      <section id="quizView" class="quiz hidden" aria-live="polite">
-        <div class="quiz-panel">
-          <p class="quiz-kicker" id="quizCategory">公式チェック</p>
-          <h2 id="quizTitle"></h2>
-          <div class="quiz-answer hidden" id="quizAnswer"></div>
-          <div class="quiz-actions three">
-            <button id="prevQuestion" type="button">ひとつ前</button>
-            <button id="showAnswer" type="button">答えを見る</button>
-            <button id="nextQuestion" type="button">次へ</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="memorizeView" class="memorize hidden" aria-live="polite"></section>
-
-      <section id="listView" class="formula-list hidden" aria-live="polite"></section>
+      <section id="overviewView" class="view"></section>
+      <section id="cardsView" class="view cards hidden" aria-live="polite"></section>
+      <section id="trainerView" class="view hidden" aria-live="polite"></section>
+      <section id="memorizeView" class="view hidden" aria-live="polite"></section>
+      <section id="mapView" class="view hidden"></section>
     </main>
 
+    <script src="theory-data.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
