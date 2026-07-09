@@ -12,9 +12,13 @@
         <p class="eyebrow">電験三種・理論</p>
         <h1>完全暗記体系</h1>
       </div>
-      <div class="score-ring" aria-label="完全暗記済み数">
-        <span id="masteredCount">0</span>
-        <small id="totalCount">/ 47</small>
+      <div class="header-tools">
+        <div class="due-chip" id="dueChip" title="今日の復習対象">復習 <strong id="dueCount">0</strong></div>
+        <div class="score-ring" aria-label="定着済み数" title="定着済み / 全公式">
+          <span id="masteredCount">0</span>
+          <small id="totalCount">/ 47</small>
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="ダークモード切替">🌙</button>
       </div>
     </header>
 
@@ -23,8 +27,9 @@
         <div>
           <p class="hero-label">問題文のキーワード → 使う公式</p>
           <h2>見た瞬間に式を選べる状態を作る</h2>
+          <p class="hero-sub" id="heroStatus"></p>
         </div>
-        <button id="resumeButton" type="button">続きから</button>
+        <button id="resumeButton" type="button">今日の復習を始める</button>
       </section>
 
       <section class="filters" aria-label="検索と絞り込み">
@@ -37,21 +42,24 @@
       </section>
 
       <section class="mode-switch" aria-label="表示モード">
-        <button class="mode-button active" type="button" data-mode="overview">方針</button>
+        <button class="mode-button active" type="button" data-mode="overview">方針・進捗</button>
         <button class="mode-button" type="button" data-mode="cards">公式</button>
-        <button class="mode-button" type="button" data-mode="trainer">キーワード</button>
         <button class="mode-button" type="button" data-mode="memorize">暗記</button>
-        <button class="mode-button" type="button" data-mode="memorizeS">暗記S</button>
-        <button class="mode-button" type="button" data-mode="memorizeA">暗記A</button>
-        <button class="mode-button" type="button" data-mode="memorizeB">暗記B</button>
+        <button class="mode-button" type="button" data-mode="quiz">4択クイズ</button>
+        <button class="mode-button" type="button" data-mode="trainer">キーワード</button>
         <button class="mode-button" type="button" data-mode="map">全体マップ</button>
       </section>
 
       <section id="overviewView" class="view"></section>
       <section id="cardsView" class="view cards hidden" aria-live="polite"></section>
-      <section id="trainerView" class="view hidden" aria-live="polite"></section>
       <section id="memorizeView" class="view hidden" aria-live="polite"></section>
+      <section id="quizView" class="view hidden" aria-live="polite"></section>
+      <section id="trainerView" class="view hidden" aria-live="polite"></section>
       <section id="mapView" class="view hidden"></section>
+
+      <p class="kbd-hint">
+        <kbd>Space</kbd> 答え表示 ／ <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> 評価・選択 ／ <kbd>←</kbd><kbd>→</kbd> 前後
+      </p>
     </main>
 
     <script src="theory-data.js"></script>

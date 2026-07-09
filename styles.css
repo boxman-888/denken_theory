@@ -5,14 +5,46 @@
   --line: #d8dee6;
   --paper: #f6f4ef;
   --panel: #fffdf8;
+  --panel-solid: #fffdf8;
+  --card-bg: #ffffff;
   --accent: #0d766d;
   --accent-2: #2458a6;
   --gold: #a46500;
   --danger: #a23b52;
+  --ok: #1a7f4e;
   --soft: #e6f5f1;
   --blue-soft: #e8f0fb;
+  --gold-soft: #fff3d4;
+  --danger-soft: #fff5f6;
+  --ok-soft: #eafaf1;
+  --header-bg: rgba(246, 244, 239, 0.92);
+  --body-grad: linear-gradient(180deg, #f8faf9 0%, #f6f4ef 45%, #eee8dd 100%);
   --shadow: 0 10px 28px rgba(22, 34, 48, 0.09);
   font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", Georgia, serif;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #e8e6e1;
+  --muted: #9aa5b1;
+  --line: #3a4250;
+  --paper: #171c24;
+  --panel: rgba(30, 37, 48, 0.96);
+  --panel-solid: #1e2530;
+  --card-bg: #232b38;
+  --accent: #3ec3b4;
+  --accent-2: #6ea8e8;
+  --gold: #e0a940;
+  --danger: #e07a90;
+  --ok: #4fc98a;
+  --soft: #12332f;
+  --blue-soft: #1d2a3d;
+  --gold-soft: #38301a;
+  --danger-soft: #38222a;
+  --ok-soft: #16311f;
+  --header-bg: rgba(23, 28, 36, 0.92);
+  --body-grad: linear-gradient(180deg, #1a2028 0%, #171c24 45%, #14181f 100%);
+  --shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -22,7 +54,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(180deg, #f8faf9 0%, var(--paper) 45%, #eee8dd 100%);
+  background: var(--body-grad);
   color: var(--ink);
 }
 
@@ -44,9 +76,48 @@ button {
   justify-content: space-between;
   gap: 14px;
   padding: 16px 15px 12px;
-  border-bottom: 1px solid rgba(216, 222, 230, 0.9);
-  background: rgba(246, 244, 239, 0.92);
+  border-bottom: 1px solid var(--line);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.due-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 0 12px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  font: 700 12px/1 system-ui, sans-serif;
+}
+
+.due-chip strong {
+  font-size: 15px;
+}
+
+.due-chip.zero {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--card-bg);
+  font-size: 16px;
+  line-height: 1;
 }
 
 .eyebrow,
@@ -84,7 +155,7 @@ main {
   height: 58px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: var(--panel);
+  background: var(--card-bg);
   box-shadow: var(--shadow);
 }
 
@@ -115,6 +186,12 @@ main {
   font-size: 21px;
 }
 
+.hero-sub {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font: 700 13px/1.4 system-ui, sans-serif;
+}
+
 .hero button,
 .primary-button,
 .ghost-button,
@@ -126,6 +203,12 @@ main {
   background: var(--accent);
   color: #fff;
   font: 700 14px/1 system-ui, sans-serif;
+}
+
+:root[data-theme="dark"] .hero button,
+:root[data-theme="dark"] .primary-button,
+:root[data-theme="dark"] .master-button {
+  color: #10201d;
 }
 
 .filters {
@@ -147,7 +230,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 14px;
-  background: #fff;
+  background: var(--card-bg);
   color: var(--ink);
   outline: none;
 }
@@ -178,7 +261,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0 13px;
-  background: #fff;
+  background: var(--card-bg);
   color: var(--muted);
 }
 
@@ -187,6 +270,11 @@ main {
   border-color: var(--accent);
   background: var(--accent);
   color: #fff;
+}
+
+:root[data-theme="dark"] .tab.active,
+:root[data-theme="dark"] .mode-button.active {
+  color: #10201d;
 }
 
 .mode-switch {
@@ -208,7 +296,7 @@ main {
 .map-row {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 253, 248, 0.96);
+  background: var(--panel);
   box-shadow: var(--shadow);
 }
 
@@ -235,7 +323,7 @@ main {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 11px;
-  background: #fff;
+  background: var(--card-bg);
 }
 
 .strategy-item strong,
@@ -255,6 +343,49 @@ main {
   font: 500 14px/1.65 system-ui, sans-serif;
 }
 
+/* 進捗バー */
+.progress-list {
+  display: grid;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.progress-row {
+  display: grid;
+  gap: 4px;
+}
+
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font: 700 12px/1.3 system-ui, sans-serif;
+}
+
+.progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.4s ease;
+}
+
+.reset-link {
+  margin-top: 12px;
+  border: 0;
+  padding: 4px 0;
+  background: none;
+  color: var(--muted);
+  font: 500 12px/1 system-ui, sans-serif;
+  text-decoration: underline;
+}
+
 .cards {
   grid-template-columns: 1fr;
 }
@@ -264,8 +395,7 @@ main {
 }
 
 .formula-card.mastered {
-  border-color: #acdccc;
-  background: #f7fffb;
+  border-color: var(--ok);
 }
 
 .card-top {
@@ -296,23 +426,38 @@ main {
   border-radius: 999px;
   padding: 0 9px;
   background: var(--blue-soft);
-  color: #24446e;
+  color: var(--accent-2);
   font: 800 12px/1 system-ui, sans-serif;
 }
 
 .badge.s {
-  background: #fff0d5;
-  color: #875200;
+  background: var(--gold-soft);
+  color: var(--gold);
 }
 
 .badge.a {
-  background: #e8f0fb;
-  color: #2458a6;
+  background: var(--blue-soft);
+  color: var(--accent-2);
 }
 
 .badge.b {
-  background: #eceff3;
-  color: #56616f;
+  background: var(--line);
+  color: var(--muted);
+}
+
+.badge.status-new {
+  background: var(--line);
+  color: var(--muted);
+}
+
+.badge.status-learning {
+  background: var(--blue-soft);
+  color: var(--accent-2);
+}
+
+.badge.status-done {
+  background: var(--ok-soft);
+  color: var(--ok);
 }
 
 .formula {
@@ -407,19 +552,28 @@ main {
   gap: 5px;
 }
 
+.note strong {
+  color: var(--ink);
+}
+
+.inline-math {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", Georgia, serif;
+  font-style: italic;
+}
+
 .meta-block.warning {
   border-left: 4px solid var(--danger);
-  background: #fff5f6;
+  background: var(--danger-soft);
 }
 
 .meta-block.core {
   border-left: 4px solid var(--accent);
-  background: #f2fbf8;
+  background: var(--soft);
 }
 
 .meta-block.mnemonic {
   border-left: 4px solid var(--gold);
-  background: #fff8e7;
+  background: var(--gold-soft);
 }
 
 .mark {
@@ -427,15 +581,15 @@ main {
   height: 40px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: #fff;
+  background: var(--card-bg);
   color: var(--muted);
   font: 800 13px/1 system-ui, sans-serif;
 }
 
 .mark.done {
-  border-color: var(--gold);
-  background: #fff3d4;
-  color: var(--gold);
+  border-color: var(--ok);
+  background: var(--ok-soft);
+  color: var(--ok);
 }
 
 .card-actions,
@@ -451,13 +605,13 @@ main {
 
 .ghost-button {
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card-bg);
   color: var(--muted);
 }
 
 .master-button.mastered {
   border: 1px solid var(--line);
-  background: #fff;
+  background: var(--card-bg);
   color: var(--muted);
 }
 
@@ -470,11 +624,31 @@ main {
   font-size: 22px;
 }
 
+.quiz-panel.finish {
+  text-align: center;
+  padding: 28px 16px;
+}
+
+.quiz-panel.finish h2 {
+  margin-bottom: 8px;
+}
+
+.quiz-panel.finish .quiz-actions {
+  margin-top: 18px;
+}
+
+.memorize-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 .quiz-question {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 13px;
-  background: #fff;
+  background: var(--card-bg);
 }
 
 .quiz-answer {
@@ -482,7 +656,19 @@ main {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--card-bg);
+  animation: fade-in 0.25s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .quiz-actions {
@@ -504,24 +690,201 @@ main {
   font: 700 14px/1 system-ui, sans-serif;
 }
 
+:root[data-theme="dark"] .quiz-actions button,
+:root[data-theme="dark"] .memorize-actions button {
+  background: #47536a;
+}
+
 .quiz-actions button.primary-button,
 .memorize-actions button.primary-button {
   background: var(--accent);
 }
 
-.memorize-actions {
-  grid-template-columns: 1fr 1fr;
+:root[data-theme="dark"] .quiz-actions button.primary-button,
+:root[data-theme="dark"] .memorize-actions button.primary-button {
+  color: #10201d;
 }
 
-.memorize-actions .master-button {
-  grid-column: 1 / -1;
-  background: var(--gold);
+.memorize-actions {
+  grid-template-columns: 1fr;
+  margin-top: 12px;
 }
+
+.primary-button.wide {
+  grid-column: 1 / -1;
+}
+
+/* 3段階評価ボタン */
+.grade-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.grade-button {
+  display: grid;
+  gap: 3px;
+  justify-items: center;
+  min-height: 56px;
+  padding: 9px 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-bg);
+  font: 700 14px/1.2 system-ui, sans-serif;
+  transition: transform 0.08s ease;
+}
+
+.grade-button:active {
+  transform: scale(0.97);
+}
+
+.grade-button small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.grade-button.again {
+  border-color: var(--danger);
+  color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.grade-button.hard {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.grade-button.good {
+  border-color: var(--ok);
+  color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.grade-button.again small { color: var(--danger); }
+.grade-button.hard small { color: var(--gold); }
+.grade-button.good small { color: var(--ok); }
 
 .masked {
   min-height: 120px;
   color: var(--accent);
   font: 800 54px/1 system-ui, sans-serif;
+}
+
+/* 4択クイズ */
+.quiz-options {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--ink);
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.quiz-option:not(:disabled):hover {
+  border-color: var(--accent);
+}
+
+.option-key {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  font: 800 13px/1 system-ui, sans-serif;
+}
+
+.option-body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.option-title {
+  font: 700 14px/1.3 system-ui, sans-serif;
+}
+
+.option-formula {
+  color: var(--muted);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.option-formula .math-line {
+  display: inline;
+}
+
+.option-formula .math-line + .math-line::before {
+  content: "、";
+}
+
+.quiz-option.correct {
+  border-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.quiz-option.correct .option-key {
+  border-color: var(--ok);
+  background: var(--ok);
+  color: #fff;
+}
+
+.quiz-option.wrong {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.quiz-option.wrong .option-key {
+  border-color: var(--danger);
+  background: var(--danger);
+  color: #fff;
+}
+
+.quiz-option.muted {
+  opacity: 0.55;
+}
+
+.quiz-feedback {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid var(--ok);
+  background: var(--ok-soft);
+  animation: fade-in 0.25s ease;
+}
+
+.quiz-feedback strong {
+  color: var(--ok);
+  font: 800 16px/1.3 system-ui, sans-serif;
+}
+
+.quiz-feedback.ng {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+
+.quiz-feedback.ng strong {
+  color: var(--danger);
 }
 
 .map-list {
@@ -549,6 +912,25 @@ main {
   font: 700 14px/1.7 system-ui, sans-serif;
 }
 
+.kbd-hint {
+  margin: 18px 0 0;
+  color: var(--muted);
+  text-align: center;
+  font: 500 12px/1.6 system-ui, sans-serif;
+}
+
+.kbd-hint kbd {
+  display: inline-block;
+  min-width: 20px;
+  padding: 2px 5px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--card-bg);
+  font: 700 11px/1.2 system-ui, sans-serif;
+  text-align: center;
+}
+
 @media (min-width: 720px) {
   .app-header {
     padding-inline: calc((100% - 860px) / 2 + 16px);
@@ -566,6 +948,10 @@ main {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .mini-grid.four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   .card-actions {
     grid-template-columns: 1fr 1fr;
   }
@@ -578,12 +964,19 @@ main {
   }
 
   .quiz-actions.three,
-  .quiz-actions,
-  .memorize-actions {
+  .quiz-actions {
     grid-template-columns: 1fr;
+  }
+
+  .grade-actions {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .formula {
     font-size: 20px;
+  }
+
+  .due-chip {
+    display: none;
   }
 }
